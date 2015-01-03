@@ -42,8 +42,9 @@ select
     margin-left: 5px
 
 #content
-    height: 100%
-    //padding-top: 50px;
+     height: 100%
+//     width: 1000px
+//     padding-top: 50px;
 
 .modal-backdrop
     background-color: rgba(0,0,0,0.8)
@@ -115,27 +116,31 @@ orange = #ffa60b
 //    border: 1px orange
 
 // for the active element
-.row.accounts-top.active .euro-sign, .row.accounts-sub.active .euro-sign
-    color: white
+// .row.accounts-top.active .euro-sign, .row.accounts-sub.active .euro-sign
+//     color: white
 
 .content-background
     background-color: #eeeeee
-    -moz-box-shadow:    3px 0 5px 0 rgba(0,0,0,0.2);
-    -webkit-box-shadow: 3px 0 5px 0 rgba(0,0,0,0.2);
-    box-shadow:         3px 0 5px 0 rgba(0,0,0,0.2);
+    // -moz-box-shadow:    3px 0 5px 0 rgba(0,0,0,0.2);
+    // -webkit-box-shadow: 3px 0 5px 0 rgba(0,0,0,0.2);
+    // box-shadow:         3px 0 5px 0 rgba(0,0,0,0.2);
     height: 100%
     padding-top: 50px
 
 .content-right-column
     padding-top: 0px
+    float: right
     //height: 100%
+    padding-left: 15px
+    padding-right: 10px
 
 .content-left-column
+    float: left
     border-right: 1px solid #bdbdbd
     border-left: 1px solid #dfdddd
-    -moz-box-shadow:    inset -3px 0 3px rgba(0,0,0,0.1);
-    -webkit-box-shadow: inset -3px 0 3px rgba(0,0,0,0.1);
-    box-shadow:         inset -3px 0 3px rgba(0,0,0,0.1);
+    // -moz-box-shadow:    inset -3px 0 3px rgba(0,0,0,0.1);
+    // -webkit-box-shadow: inset -3px 0 3px rgba(0,0,0,0.1);
+    // box-shadow:         inset -3px 0 3px rgba(0,0,0,0.1);
     padding-left: 0
     padding-right: 0
 
@@ -145,8 +150,8 @@ orange = #ffa60b
     background-color: white
     border-right: 1px solid #bdbdbd
 
-.content-left-column
-    background-color: #FCFCFC
+// #content-left-column
+//     background-color: #FCFCFC
 
 .form-search
     margin-top: 10px
@@ -196,34 +201,42 @@ input.reports-limit
 
 .row.accounts-sub:hover
     background-color: basecolor-alpha
-    -moz-box-shadow:    inset -3px 0 3px rgba(0,0,0,0.1);
-    -webkit-box-shadow: inset -3px 0 3px rgba(0,0,0,0.1);
-    box-shadow:         inset -3px 0 3px rgba(0,0,0,0.1);
+    // -moz-box-shadow:    inset -3px 0 3px rgba(0,0,0,0.1);
+    // -webkit-box-shadow: inset -3px 0 3px rgba(0,0,0,0.1);
+    // box-shadow:         inset -3px 0 3px rgba(0,0,0,0.1);
     cursor: pointer
 
-    .account-details
-        color: #eee
+    // .account-details
+    //     color: #eee
 
 .row.accounts-top.active, .row.accounts-sub.active
-    background-color: basecolor
-    color: white
-    -moz-box-shadow:    inset -3px 0px 3px rgba(0,0,0,0.1);
-    -webkit-box-shadow: inset -3px 0px 3px rgba(0,0,0,0.1);
-    box-shadow:         inset -3px 0px 3px rgba(0,0,0,0.1);
-
-    .account-details
-        color: #e0e0e0
+    // background-color: basecolor
+    color: black
+    // -moz-box-shadow:    inset -3px 0px 3px rgba(0,0,0,0.1);
+    // -webkit-box-shadow: inset -3px 0px 3px rgba(0,0,0,0.1);
+    // box-shadow:         inset -3px 0px 3px rgba(0,0,0,0.1);
+    border-left-color: basecolor
+    // .account-details
+    //     color: #e0e0e0
 
 .row.accounts-sub
     font-size: 14px
     margin: 0 11px
     padding: 0px 0 3px 15px
+    border-left: 3px solid white
 
 
 
 // TABLE OPERATIONS
 table#table-operations
     margin-top: 20px
+
+// .table-striped > tbody > tr:nth-child(odd) > th
+//     background-color: #f9f9f9;
+
+.table > tbody > tr > td
+    border-top: 0px
+    padding: 7px
 
 td.operation-date
     color: #6f6f6f

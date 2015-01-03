@@ -4,13 +4,13 @@ for bank in banks
     output[bank.uuid] = [
         {
             "accountNumber": "1234567890",
-            "label": "Compte bancaire",
-            "balance": "150"
+            "label": "Checking account",
+            "balance": "15820.35"
         },
         {
             "accountNumber": "0987654321",
-            "label": "Livret A",
-            "balance": "500"
+            "label": "Saving account",
+            "balance": "154700.62"
         }
     ]
 

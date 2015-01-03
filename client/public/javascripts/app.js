@@ -1697,10 +1697,15 @@ module.exports = BalanceOperationView = (function(_super) {
   }
 
   BalanceOperationView.prototype.fakeFeatureLink = function() {
-    if (this.model.get('title') === "SNCF" && this.model.get('amount') === -137.00) {
-      return 'pdf/factureSNCF.pdf';
-    } else if (this.model.get('title') === "SFR Facture") {
-      return 'pdf/factureSFR.pdf';
+    if (this.model.get('title') === "AT&T") {
+      return 'pdf/Att Bill May 2012.pdf';
+    } else if (this.model.get('title') === "American Electric Power") {
+      return 'pdf/2014-11-AmericanElectricPower-Bill.pdf';
+    } else if (this.model.get('title') === "Salary") {
+      return 'pdf/paystub.pdf';
+    } else if (this.model.get('title') === "American Airlines - Los Angeles <-> Paris") {
+      return 'pdf/british-airways-boarding-pass.pdf';
+      return American(Airlines);
     } else {
       return null;
     }
@@ -1708,9 +1713,6 @@ module.exports = BalanceOperationView = (function(_super) {
 
   BalanceOperationView.prototype.render = function() {
     var formattedAmount, hint;
-    if (this.model.get("amount") > 0) {
-      this.$el.addClass("success");
-    }
     this.model.account = this.account;
     this.model.formattedDate = moment(this.model.get('date')).format("DD/MM/YYYY");
     formattedAmount = this.fakeFeatureLink();
@@ -2738,7 +2740,7 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
-buf.push('<div class="row content-background"><div class="col-lg-12 content-right-column"></div></div>');
+buf.push('<div class="row content-background"><div class="content-right-column"></div></div>');
 }
 return buf.join("");
 };
@@ -2857,7 +2859,7 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
-buf.push('<div class="row accounts-sub"><div class="pull-left"><p class="pull-left">' + escape((interp = model.get('title')) == null ? '' : interp) + '</p><br/><span class="account-details">n°' + escape((interp = model.get("accountNumber")) == null ? '' : interp) + '</span></div><div class="pull-right"><p class="pull-right">' + escape((interp = Number(model.get('amount')).money()) == null ? '' : interp) + '<span class="euro-sign">&euro;</span></p></div></div>');
+buf.push('<div class="row accounts-sub"><div class="pull-left"><p class="pull-left">' + escape((interp = model.get('title')) == null ? '' : interp) + '</p><br/><span class="account-details">n°' + escape((interp = model.get("accountNumber")) == null ? '' : interp) + '</span></div><div class="pull-right"><p class="pull-right">' + escape((interp = Number(model.get('amount')).money()) == null ? '' : interp) + '<span class="euro-sign">&#36;</span></p></div></div>');
 }
 return buf.join("");
 };
@@ -2869,7 +2871,7 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
-buf.push('<div class="row accounts-top"><div class="col-lg-7"><p class="pull-left"><span class="bank-title-loading"><img src="./loader.gif"/></span><span class="bank-title">' + escape((interp = model.get('name')) == null ? '' : interp) + '</span></p></div><div class="col-lg-5"><p class="pull-right bank-balance"><span class="bank-amount">' + escape((interp = Number(model.get('amount')).money()) == null ? '' : interp) + '</span><span class="euro-sign"> &euro;</span></p></div></div>');
+buf.push('<div class="row accounts-top"><div class="col-lg-7"><p class="pull-left"><span class="bank-title-loading"><img src="./loader.gif"/></span><span class="bank-title">' + escape((interp = model.get('name')) == null ? '' : interp) + '</span></p></div><div class="col-lg-5"><p class="pull-right bank-balance"><span class="bank-amount">' + escape((interp = Number(model.get('amount')).money()) == null ? '' : interp) + '</span><span class="euro-sign"> &#36;</span></p></div></div>');
 }
 return buf.join("");
 };
@@ -2930,7 +2932,7 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
-buf.push('<h2>' + escape((interp = model.get("title")) == null ? '' : interp) + '</h2><p><span class="last-checked">' + escape((interp = window.i18n("balance_last_checked")) == null ? '' : interp) + ' ' + escape((interp = moment(moment(model.get("lastChecked"))).fromNow()) == null ? '' : interp) + '. </span><a class="recheck-button btn-link">' + escape((interp = window.i18n("balance_recheck_now")) == null ? '' : interp) + '</a></p><div class="text-center loading loader-operations"><img src="./loader_big_blue.gif"/></div><table class="table tablesorter table-striped table-hover"><thead><tr><th class="sort-date text-left">' + escape((interp = window.i18n("header_date")) == null ? '' : interp) + '</th><th class="sort-title text-center">' + escape((interp = window.i18n("header_title")) == null ? '' : interp) + '</th><th class="sort-amount text-right">' + escape((interp = window.i18n("header_amount")) == null ? '' : interp) + '</th></tr></thead><tbody id="table-operations"></tbody></table>');
+buf.push('<h2>' + escape((interp = model.get("title")) == null ? '' : interp) + '</h2><p><span class="last-checked">' + escape((interp = window.i18n("balance_last_checked")) == null ? '' : interp) + ' ' + escape((interp = moment(moment(model.get("lastChecked"))).fromNow()) == null ? '' : interp) + '.</span><a class="recheck-button btn-link">' + escape((interp = window.i18n("balance_recheck_now")) == null ? '' : interp) + '</a></p><div class="text-center loading loader-operations"><img src="./loader_big_blue.gif"/></div><table class="table tablesorter table-hover"><thead><tr><th class="sort-date text-left">' + escape((interp = window.i18n("header_date")) == null ? '' : interp) + '</th><th class="sort-title text-center">' + escape((interp = window.i18n("header_title")) == null ? '' : interp) + '</th><th class="sort-amount text-right">' + escape((interp = window.i18n("header_amount")) == null ? '' : interp) + '</th></tr></thead><tbody id="table-operations"></tbody></table>');
 }
 return buf.join("");
 };
@@ -2942,7 +2944,7 @@ attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow |
 var buf = [];
 with (locals || {}) {
 var interp;
-buf.push('<div class="row content-background"><div id="layout-2col-column-left" class="col-lg-4 content-left-column"></div><div id="layout-2col-column-right" class="col-lg-8 content-right-column"></div></div>');
+buf.push('<div class="content-background"><div id="layout-2col-column-left" class="content-left-column"></div><div id="layout-2col-column-right" class="content-right-column"></div></div>');
 }
 return buf.join("");
 };
