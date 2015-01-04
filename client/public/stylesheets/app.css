@@ -8578,7 +8578,7 @@ body {
 }
 body {
   font-family: styled, helvetica;
-  background: #fcf9f5;
+  background: #1b1b1b;
 }
 h1,
 h2,
@@ -8712,6 +8712,13 @@ input.reports-limit {
   -webkit-box-shadow: 0px 3px 5px 0 rgba(0,0,0,0.2);
   box-shadow: 0px 3px 5px 0 rgba(0,0,0,0.2);
 }
+.container {
+  width: 1000px;
+  padding: 0;
+}
+.navbar-collapse {
+  padding-left: 0;
+}
 .navbar-nav > li > a {
   font-size: 16px;
 }
@@ -8744,7 +8751,7 @@ input.reports-limit {
   padding: 15px 0 0px 0;
 }
 .row.accounts-sub:hover {
-  background-color: rgba(49,156,255,0.5);
+  background-color: #f5f5f5;
   cursor: pointer;
 }
 .row.accounts-top.active,

@@ -33,7 +33,7 @@
     "test": "cake --use-js tests",
     "start": "node build/server.js"
   },
-  "cozy-displayName": "Mes Comptes",
+  "cozy-displayName": "Banks",
   "cozy-permissions": {
     "Bank": {
       "description": "Les banques auxquelles vous pouvez accéder via l'application."
