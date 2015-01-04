@@ -9,11 +9,26 @@ module.exports = class BalanceOperationView extends BaseView
     constructor: (@model, @account, @showAccountNum = false) ->
         super()
 
+    fakeFeatureLink: ->
+        if @model.get('title') is "AT&T"
+            return 'pdf/Att Bill May 2012.pdf'
+        else if @model.get('title') is "American Electric Power"
+            return 'pdf/2014-11-AmericanElectricPower-Bill.pdf'
+        else if @model.get('title') is "Salary"
+            return 'pdf/paystub.pdf'
+        else if @model.get('title') is "American Airlines - Los Angeles <-> Paris"
+            return 'pdf/british-airways-boarding-pass.pdf'
+
+            American Airlines
+        else return null
+
     render: ->
-        if @model.get("amount") > 0
-            @$el.addClass "success"
+        # if @model.get("amount") > 0
+        #     @$el.addClass "success"
         @model.account = @account
         @model.formattedDate = moment(@model.get('date')).format "DD/MM/YYYY"
+        formattedAmount = @fakeFeatureLink()
+        @model.formattedAmount = formattedAmount unless formattedAmount is null
 
         if @showAccountNum
             hint = "#{@model.account.get('title')}, " + \
