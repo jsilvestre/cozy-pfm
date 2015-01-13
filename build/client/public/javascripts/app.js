@@ -1705,6 +1705,10 @@ module.exports = BalanceOperationView = (function(_super) {
       return 'pdf/paystub.pdf';
     } else if (this.model.get('title') === "American Airlines - Los Angeles <-> Paris") {
       return 'pdf/british-airways-boarding-pass.pdf';
+    } else if (this.model.get('title') === "SNCF") {
+      return 'pdf/factureSNCF.pdf';
+    } else if (this.model.get('title') === "SFR Facture") {
+      return 'pdf/factureSFR.pdf';
       return American(Airlines);
     } else {
       return null;

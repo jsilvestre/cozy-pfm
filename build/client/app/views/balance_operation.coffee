@@ -18,6 +18,12 @@ module.exports = class BalanceOperationView extends BaseView
             return 'pdf/paystub.pdf'
         else if @model.get('title') is "American Airlines - Los Angeles <-> Paris"
             return 'pdf/british-airways-boarding-pass.pdf'
+        else if @model.get('title') is "SNCF"
+            return 'pdf/factureSNCF.pdf'
+        else if @model.get('title') is "SFR Facture"
+            return 'pdf/factureSFR.pdf'
+
+
 
             American Airlines
         else return null
