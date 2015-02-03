@@ -9,7 +9,7 @@ module.exports = class BalanceOperationView extends BaseView
     constructor: (@model, @account, @showAccountNum = false) ->
         super()
 
-    fakeFeatureLink: ->
+    fakeFeatureLink: () ->
         if @model.get('title') is "AT&T"
             return 'pdf/Att Bill May 2012.pdf'
         else if @model.get('title') is "American Electric Power"
@@ -22,10 +22,8 @@ module.exports = class BalanceOperationView extends BaseView
             return 'pdf/factureSNCF.pdf'
         else if @model.get('title') is "SFR Facture"
             return 'pdf/factureSFR.pdf'
-
-
-
-            American Airlines
+        else if @model.get('title') is "EDF Facture"
+            return 'pdf/factureSFR.pdf'
         else return null
 
     render: ->
@@ -44,4 +42,11 @@ module.exports = class BalanceOperationView extends BaseView
         else
             @model.hint = "#{@model.get('raw')}"
         super()
+        if formattedAmount isnt null
+            a = this.$el.find("a")
+            a.click =>
+                if @model.get('title') is "EDF Facture"
+                    intent = {action: 'goto', params: "edf/4-facture"} # [url=files/folders...'] http://localhost:9104/#apps/edf/4-facture
+                    window.parent.postMessage(intent, window.location.origin)
+                false
         @

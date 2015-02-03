@@ -1709,14 +1709,15 @@ module.exports = BalanceOperationView = (function(_super) {
       return 'pdf/factureSNCF.pdf';
     } else if (this.model.get('title') === "SFR Facture") {
       return 'pdf/factureSFR.pdf';
-      return American(Airlines);
+    } else if (this.model.get('title') === "EDF Facture") {
+      return 'pdf/factureSFR.pdf';
     } else {
       return null;
     }
   };
 
   BalanceOperationView.prototype.render = function() {
-    var formattedAmount, hint;
+    var a, formattedAmount, hint;
     this.model.account = this.account;
     this.model.formattedDate = moment(this.model.get('date')).format("DD/MM/YYYY");
     formattedAmount = this.fakeFeatureLink();
@@ -1730,6 +1731,22 @@ module.exports = BalanceOperationView = (function(_super) {
       this.model.hint = "" + (this.model.get('raw'));
     }
     BalanceOperationView.__super__.render.call(this);
+    if (formattedAmount !== null) {
+      a = this.$el.find("a");
+      a.click((function(_this) {
+        return function() {
+          var intent;
+          if (_this.model.get('title') === "EDF Facture") {
+            intent = {
+              action: 'goto',
+              params: "edf/4-facture"
+            };
+            window.parent.postMessage(intent, window.location.origin);
+          }
+          return false;
+        };
+      })(this));
+    }
     return this;
   };
 
