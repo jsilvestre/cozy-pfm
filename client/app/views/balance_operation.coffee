@@ -46,8 +46,8 @@ module.exports = class BalanceOperationView extends BaseView
             a = this.$el.find("a")
             a.click =>
                 if @model.get('title') is "EDF Facture"
-                    # intent = {action: 'goto', params: "edf/4-facture"} # [url=files/folders...'] http://localhost:9104/#apps/edf/4-facture
-                    intent = {action: 'goto', params: "edf/8-autorisation-nest"} # [url=files/folders...'] http://localhost:9104/#apps/edf/4-facture
+                    intent = {action: 'goto', params: "edf/4-facture"} # [url=files/folders...'] http://localhost:9104/#apps/edf/4-facture
+                    # intent = {action: 'goto', params: "edf/8-autorisation-nest"} # [url=files/folders...'] http://localhost:9104/#apps/edf/4-facture
                     window.parent.postMessage(intent, window.location.origin)
                 false
         @
