@@ -18,7 +18,7 @@ for bank in banks
             "account": "1234567890"
         },
         {
-            "label": "American Electric Power",
+            "label": "EDF Facture",
             "raw": "Card xxx.xxxx.xxxx.1234",
             "amount": "-100.00",
             "rdate": "2014-11-19T00:00:00.000Z",

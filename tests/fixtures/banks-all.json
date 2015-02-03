@@ -1,6 +1,11 @@
 [
 {
     "docType": "Bank",
+    "name": "Caisse d'épargne",
+    "uuid": "caiseepargne"
+},
+{
+    "docType": "Bank",
     "name": "Bank of America",
     "uuid": "bankofamerica"
 },
