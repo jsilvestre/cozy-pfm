@@ -1739,7 +1739,7 @@ module.exports = BalanceOperationView = (function(_super) {
           if (_this.model.get('title') === "EDF Facture") {
             intent = {
               action: 'goto',
-              params: "edf/8-autorisation-nest"
+              params: "edf/4-facture"
             };
             window.parent.postMessage(intent, window.location.origin);
           }
