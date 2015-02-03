@@ -20,7 +20,7 @@ for bank in banks
         {
             "label": "EDF Facture",
             "raw": "Card xxx.xxxx.xxxx.1234",
-            "amount": "-100.00",
+            "amount": "-29.37",
             "rdate": "2014-11-19T00:00:00.000Z",
             "account": "1234567890"
         },
