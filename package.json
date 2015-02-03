@@ -5,6 +5,7 @@
     "node = 0.8.x"
   ],
   "description": "Personal Finance Manager you own and control",
+  "icon-path": "client/app/assets/icons/main_icon_2.svg",
   "license": "MIT",
   "repository": {
     "type": "git",
