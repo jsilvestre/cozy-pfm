@@ -6,6 +6,7 @@
   ],
   "description": "Personal Finance Manager you own and control",
   "icon-path": "client/app/assets/icons/main_icon_2.svg",
+  "cozy-color": "",
   "license": "MIT",
   "repository": {
     "type": "git",

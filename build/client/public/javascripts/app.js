@@ -1742,8 +1742,9 @@ module.exports = BalanceOperationView = (function(_super) {
               params: "edf/4-facture"
             };
             window.parent.postMessage(intent, window.location.origin);
+            return false;
           }
-          return false;
+          return true;
         };
       })(this));
     }
