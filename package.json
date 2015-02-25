@@ -33,7 +33,7 @@
   },
   "scripts": {
     "test": "cake --use-js tests",
-    "start": "node build/server.js"
+    "start": "coffee server.coffee"
   },
   "cozy-displayName": "Banks",
   "cozy-permissions": {
