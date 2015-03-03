@@ -4,9 +4,23 @@ output = {}
 for bank in banks
     output[bank.uuid] = [
         {
+            "label": "SNCF",
+            "raw": "SNCF Carte X1234",
+            "amount": "-15.00",
+            "rdate": "2014-11-22T00:00:00.000Z",
+            "account": "1234567890"
+        },
+        {
             "label": "Wallmart",
             "raw": "Wallmart",
             "amount": "-5.00",
+            "rdate": "2014-11-21T00:00:00.000Z",
+            "account": "1234567890"
+        },
+        {
+            "label": "SFR Facture",
+            "raw": "SFR Facture CarréRouge 248791",
+            "amount": "-43.19",
             "rdate": "2014-11-20T00:00:00.000Z",
             "account": "1234567890"
         },
