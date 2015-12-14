@@ -50,5 +50,16 @@ module.exports = class BalanceOperationView extends BaseView
                     # intent = {action: 'goto', params: "edf/8-autorisation-nest"} # [url=files/folders...'] http://localhost:9104/#apps/edf/4-facture
                     window.parent.postMessage(intent, window.location.origin)
                     return false
+                else if @model.get('title') is "SNCF"
+                    # [url="{app}/{in-app-url}"]
+                    accountID = "883e212ac05446165ff909638f0453ba"
+                    mailboxID = "883e212ac05446165ff909638f04784c"
+                    conversationID = "c3cf6e08-3448-4760-8c61-85ae578383ec"
+                    messageID = "ca3427afde0f9f0ee4b9b2dacd951153"
+                    intent =
+                        action: 'goto'
+                        params: "emails/account/#{accountID}/mailbox/#{mailboxID}/conversation/#{conversationID}/#{messageID}/"
+                    window.parent.postMessage(intent, window.location.origin)
+                    return false
                 return true
         @
