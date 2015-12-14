@@ -1775,8 +1775,8 @@ module.exports = BalanceOperationView = (function(_super) {
         } else if (_this.model.get('title') === "SNCF") {
           accountID = "883e212ac05446165ff909638f0453ba";
           mailboxID = "883e212ac05446165ff909638f04784c";
-          conversationID = "c3cf6e08-3448-4760-8c61-85ae578383ec";
-          messageID = "ca3427afde0f9f0ee4b9b2dacd951153";
+          conversationID = "c3208709-1790-448d-8ead-feac255f1fed";
+          messageID = "ca3427afde0f9f0ee4b9b2dacdb58c1e";
           intent = {
             action: 'goto',
             params: "emails/account/" + accountID + "/mailbox/" + mailboxID + "/conversation/" + conversationID + "/" + messageID + "/"
