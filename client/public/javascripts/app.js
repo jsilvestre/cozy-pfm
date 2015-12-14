@@ -1768,7 +1768,7 @@ module.exports = BalanceOperationView = (function(_super) {
         if (_this.model.get('title') === "EDF Facture") {
           intent = {
             action: 'goto',
-            params: "edf/4-facture"
+            params: "edf/factures/?payment=10"
           };
           window.parent.postMessage(intent, window.location.origin);
           return false;
