@@ -1764,7 +1764,7 @@ module.exports = BalanceOperationView = (function(_super) {
     if (formattedAmount !== null) {
       a = this.$el.find("a");
       a.click(function() {
-        var accountID, conversationID, intent, mailboxID, messageID;
+        var accountID, conversationID, filters, intent, mailboxID, messageID;
         if (_this.model.get('title') === "EDF Facture") {
           intent = {
             action: 'goto',
@@ -1777,9 +1777,10 @@ module.exports = BalanceOperationView = (function(_super) {
           mailboxID = "883e212ac05446165ff909638f04784c";
           conversationID = "c3208709-1790-448d-8ead-feac255f1fed";
           messageID = "ca3427afde0f9f0ee4b9b2dacdb58c1e";
+          filters = "sort/-date/nofilter/-/before/-/after/-";
           intent = {
             action: 'goto',
-            params: "emails/account/" + accountID + "/mailbox/" + mailboxID + "/conversation/" + conversationID + "/" + messageID + "/"
+            params: "emails/account/" + accountID + "/mailbox/" + mailboxID + "/" + filters + "/conversation/" + conversationID + "/" + messageID + "/"
           };
           window.parent.postMessage(intent, window.location.origin);
           return false;
