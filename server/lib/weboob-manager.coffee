@@ -67,17 +67,21 @@ class WeboobManager
                 operationsWeboob = body["#{access.bank}"]
                 operations = []
                 now = moment()
-                for operationWeboob in operationsWeboob
-                    relatedAccount = operationWeboob.account
-                    operation =
-                        title: operationWeboob.label
-                        amount: operationWeboob.amount
-                        date: operationWeboob.rdate
-                        dateImport: now.format "YYYY-MM-DDTHH:mm:ss.000Z"
-                        raw: operationWeboob.raw
-                        bankAccount: relatedAccount
+                if operationsWeboob?
+                    for operationWeboob in operationsWeboob
+                        relatedAccount = operationWeboob.account
+                        operation =
+                            title: operationWeboob.label
+                            amount: operationWeboob.amount
+                            date: operationWeboob.rdate
+                            dateImport: now.format "YYYY-MM-DDTHH:mm:ss.000Z"
+                            raw: operationWeboob.raw
+                            bankAccount: relatedAccount
 
-                    operations.push operation
+                        operations.push operation
+                else
+                    console.log "Could not find operationsWeboob (undefined)"
+                    console.log access.bank, body
 
                 @processRetrievedOperations operations, callback
 
