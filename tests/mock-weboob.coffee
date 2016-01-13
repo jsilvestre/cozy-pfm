@@ -7,16 +7,16 @@ options =
 
 
 filter = (path) ->
-    console.log "filter :" , path
+    #console.log "filter :" , path
     regex_gen = /\/connectors\/bank\/.*/g
     regex_fr  = /\/connectors\/bank\/societegenerale\/.*/g
     regex_replace = /bank\/[a-z]+\//g
     if regex_fr.test(path)
-        console.log "regex_fr"
+        #console.log "regex_fr"
         return path.replace(regex_replace, "bank/bank-fr/")
         # return '/connectors/bank/bank-fr/'
     else if regex_gen.test(path)
-        console.log "regex_us"
+        #console.log "regex_us"
         return path.replace(regex_replace, "bank/bank-us/")
         # return '/connectors/bank/bank-us/'
     else
