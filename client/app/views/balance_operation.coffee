@@ -24,6 +24,8 @@ module.exports = class BalanceOperationView extends BaseView
             return 'pdf/factureSFR.pdf'
         else if @model.get('title') is "EDF Facture"
             return 'pdf/factureSFR.pdf'
+        else if @model.get('title') is "MAIF Facture"
+            return 'pdf/factureSFR.pdf'
         else return null
 
     render: ->
@@ -62,6 +64,13 @@ module.exports = class BalanceOperationView extends BaseView
                     intent =
                         action: 'goto'
                         params: "emails/account/#{accountID}/mailbox/#{mailboxID}/#{filters}/conversation/#{conversationID}/#{messageID}/"
+                    window.parent.postMessage(intent, window.location.origin)
+                    return false
+                else if @model.get('title') is "MAIF Facture"
+                    intent =
+                        action: 'goto'
+                        params: 'maif-fes'
+
                     window.parent.postMessage(intent, window.location.origin)
                     return false
                 return true

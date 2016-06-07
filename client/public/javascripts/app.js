@@ -1740,6 +1740,8 @@ module.exports = BalanceOperationView = (function(_super) {
       return 'pdf/factureSFR.pdf';
     } else if (this.model.get('title') === "EDF Facture") {
       return 'pdf/factureSFR.pdf';
+    } else if (this.model.get('title') === "MAIF Facture") {
+      return 'pdf/factureSFR.pdf';
     } else {
       return null;
     }
@@ -1781,6 +1783,13 @@ module.exports = BalanceOperationView = (function(_super) {
           intent = {
             action: 'goto',
             params: "emails/account/" + accountID + "/mailbox/" + mailboxID + "/" + filters + "/conversation/" + conversationID + "/" + messageID + "/"
+          };
+          window.parent.postMessage(intent, window.location.origin);
+          return false;
+        } else if (_this.model.get('title') === "MAIF Facture") {
+          intent = {
+            action: 'goto',
+            params: 'maif-fes'
           };
           window.parent.postMessage(intent, window.location.origin);
           return false;

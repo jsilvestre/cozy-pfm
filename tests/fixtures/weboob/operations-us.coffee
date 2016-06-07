@@ -39,6 +39,13 @@ for bank in banks
             "account": "1234567890"
         },
         {
+            "label": "MAIF Facture",
+            "raw": "MAIF Facture Assurance 248791",
+            "amount": "-75.68",
+            "rdate": "2014-11-30T00:00:00.000Z",
+            "account": "1234567890"
+        },
+        {
             "label": "American Airlines - Los Angeles <-> Paris",
             "raw": "Single ticket to San Francisco",
             "amount": "-1500.00",

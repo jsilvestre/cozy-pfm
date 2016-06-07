@@ -81,6 +81,13 @@ for bank in banks
             "account": "1234567890"
         },
         {
+            "label": "MAIF Facture",
+            "raw": "MAIF Facture Assurance 248791",
+            "amount": "-75.68",
+            "rdate": "2014-01-12T00:00:00.000Z",
+            "account": "1234567890"
+        },
+        {
             "account": "1234567890",
             "label": "LIDL 0304",
             "rdate": "2013-11-19T00:00:00.000Z",
