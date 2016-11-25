@@ -4,9 +4,9 @@ output = {}
 for bank in banks
     output[bank.uuid] = [
         {
-            "label": "SNCF",
-            "raw": "SNCF Carte X1234",
-            "amount": "-15.00",
+            "label": "Capitaine Train",
+            "raw": "Capitaine Train Carte X1234",
+            "amount": "-72.00",
             "rdate": "2014-11-22T00:00:00.000Z",
             "account": "1234567890"
         },
