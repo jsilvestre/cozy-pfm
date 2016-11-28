@@ -1744,6 +1744,8 @@ module.exports = BalanceOperationView = (function(_super) {
       return 'pdf/factureSFR.pdf';
     } else if (this.model.get('title') === "Prélèvement prêt personnel Cetelem") {
       return 'pdf/factureSFR.pdf';
+    } else if (this.model.get('title') === "Ventes privées") {
+      return 'pdf/factureSFR.pdf';
     } else {
       return null;
     }
@@ -1799,6 +1801,13 @@ module.exports = BalanceOperationView = (function(_super) {
           intent = {
             action: 'goto',
             params: 'fake-cetelem'
+          };
+          window.parent.postMessage(intent, window.location.origin);
+          return false;
+        } else if (_this.model.get('title') === "Ventes privées") {
+          intent = {
+            action: 'goto',
+            params: 'fake-ventesprivees'
           };
           window.parent.postMessage(intent, window.location.origin);
           return false;

@@ -18,6 +18,13 @@ for bank in banks
             "account": "1234567890"
         },
         {
+            "label": "Ventes privées",
+            "raw": "Ventes privées prélèvement X2311",
+            "amount": "-112.06",
+            "rdate": "2016-11-26T00:00:00.000Z",
+            "account": "1234567890"
+        },
+        {
             "label": "Wallmart",
             "raw": "Wallmart",
             "amount": "-5.00",
