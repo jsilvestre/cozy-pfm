@@ -1791,7 +1791,7 @@ module.exports = BalanceOperationView = (function(_super) {
         } else if (_this.model.get('title') === "MAIF Facture") {
           intent = {
             action: 'goto',
-            params: 'maif-fes'
+            params: 'maif'
           };
           window.parent.postMessage(intent, window.location.origin);
           return false;

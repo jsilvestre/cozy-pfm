@@ -71,7 +71,7 @@ module.exports = class BalanceOperationView extends BaseView
                 else if @model.get('title') is "MAIF Facture"
                     intent =
                         action: 'goto'
-                        params: 'maif-fes'
+                        params: 'maif'
 
                     window.parent.postMessage(intent, window.location.origin)
                     return false
