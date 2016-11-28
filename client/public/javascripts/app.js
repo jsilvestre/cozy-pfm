@@ -1734,13 +1734,15 @@ module.exports = BalanceOperationView = (function(_super) {
       return 'pdf/paystub.pdf';
     } else if (this.model.get('title') === "American Airlines - Los Angeles <-> Paris") {
       return 'pdf/british-airways-boarding-pass.pdf';
-    } else if (this.model.get('title') === "SNCF") {
+    } else if (this.model.get('title') === "Capitaine Train") {
       return 'pdf/factureSNCF.pdf';
     } else if (this.model.get('title') === "SFR Facture") {
       return 'pdf/factureSFR.pdf';
     } else if (this.model.get('title') === "EDF Facture") {
       return 'pdf/factureSFR.pdf';
     } else if (this.model.get('title') === "MAIF Facture") {
+      return 'pdf/factureSFR.pdf';
+    } else if (this.model.get('title') === "Prélèvement prêt personnel Cetelem") {
       return 'pdf/factureSFR.pdf';
     } else {
       return null;
@@ -1774,7 +1776,7 @@ module.exports = BalanceOperationView = (function(_super) {
           };
           window.parent.postMessage(intent, window.location.origin);
           return false;
-        } else if (_this.model.get('title') === "SNCF") {
+        } else if (_this.model.get('title') === "Capitaine Train") {
           accountID = "883e212ac05446165ff909638f0453ba";
           mailboxID = "883e212ac05446165ff909638f04784c";
           conversationID = "c3208709-1790-448d-8ead-feac255f1fed";
@@ -1790,6 +1792,13 @@ module.exports = BalanceOperationView = (function(_super) {
           intent = {
             action: 'goto',
             params: 'maif-fes'
+          };
+          window.parent.postMessage(intent, window.location.origin);
+          return false;
+        } else if (_this.model.get('title') === "Prélèvement prêt personnel Cetelem") {
+          intent = {
+            action: 'goto',
+            params: 'fake-cetelem'
           };
           window.parent.postMessage(intent, window.location.origin);
           return false;
@@ -2809,7 +2818,8 @@ module.exports = SearchOperationsTableView = (function(_super) {
 });
 
 require.register("views/templates/accounts", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2821,7 +2831,8 @@ return buf.join("");
 });
 
 require.register("views/templates/accounts_alerts", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2833,7 +2844,8 @@ return buf.join("");
 });
 
 require.register("views/templates/accounts_alerts_alert", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2892,7 +2904,8 @@ return buf.join("");
 });
 
 require.register("views/templates/accounts_bank", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2904,7 +2917,8 @@ return buf.join("");
 });
 
 require.register("views/templates/accounts_bank_account", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2916,7 +2930,8 @@ return buf.join("");
 });
 
 require.register("views/templates/app", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2928,7 +2943,8 @@ return buf.join("");
 });
 
 require.register("views/templates/balance_bank_subtitle", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2940,7 +2956,8 @@ return buf.join("");
 });
 
 require.register("views/templates/balance_bank_title", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2952,7 +2969,8 @@ return buf.join("");
 });
 
 require.register("views/templates/balance_banks_empty", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2964,7 +2982,8 @@ return buf.join("");
 });
 
 require.register("views/templates/balance_operations_element", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -2989,7 +3008,8 @@ return buf.join("");
 });
 
 require.register("views/templates/balance_operations_empty", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3001,7 +3021,8 @@ return buf.join("");
 });
 
 require.register("views/templates/balance_operations_header", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3013,7 +3034,8 @@ return buf.join("");
 });
 
 require.register("views/templates/layout-2col", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3025,7 +3047,8 @@ return buf.join("");
 });
 
 require.register("views/templates/mockup_balance", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3037,7 +3060,8 @@ return buf.join("");
 });
 
 require.register("views/templates/modal_confirm", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3049,7 +3073,8 @@ return buf.join("");
 });
 
 require.register("views/templates/navbar", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3061,7 +3086,8 @@ return buf.join("");
 });
 
 require.register("views/templates/new_bank", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3109,7 +3135,8 @@ return buf.join("");
 });
 
 require.register("views/templates/search_bank_subtitle", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3130,7 +3157,8 @@ return buf.join("");
 });
 
 require.register("views/templates/search_bank_title", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3151,7 +3179,8 @@ return buf.join("");
 });
 
 require.register("views/templates/search_operations", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {
@@ -3163,7 +3192,8 @@ return buf.join("");
 });
 
 require.register("views/templates/search_operations_table_header", function(exports, require, module) {
-module.exports = function anonymous(locals, attrs, escape, rethrow, merge) {
+module.exports = function anonymous(locals, attrs, escape, rethrow, merge
+/**/) {
 attrs = attrs || jade.attrs; escape = escape || jade.escape; rethrow = rethrow || jade.rethrow; merge = merge || jade.merge;
 var buf = [];
 with (locals || {}) {

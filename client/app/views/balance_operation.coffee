@@ -18,13 +18,15 @@ module.exports = class BalanceOperationView extends BaseView
             return 'pdf/paystub.pdf'
         else if @model.get('title') is "American Airlines - Los Angeles <-> Paris"
             return 'pdf/british-airways-boarding-pass.pdf'
-        else if @model.get('title') is "SNCF"
+        else if @model.get('title') is "Capitaine Train"
             return 'pdf/factureSNCF.pdf'
         else if @model.get('title') is "SFR Facture"
             return 'pdf/factureSFR.pdf'
         else if @model.get('title') is "EDF Facture"
             return 'pdf/factureSFR.pdf'
         else if @model.get('title') is "MAIF Facture"
+            return 'pdf/factureSFR.pdf'
+        else if @model.get('title') is "Prélèvement prêt personnel Cetelem"
             return 'pdf/factureSFR.pdf'
         else return null
 
@@ -54,7 +56,7 @@ module.exports = class BalanceOperationView extends BaseView
                         params: "edf/factures/?payment=10"
                     window.parent.postMessage(intent, window.location.origin)
                     return false
-                else if @model.get('title') is "SNCF"
+                else if @model.get('title') is "Capitaine Train"
                     # [url="{app}/{in-app-url}"]
                     accountID = "883e212ac05446165ff909638f0453ba"
                     mailboxID = "883e212ac05446165ff909638f04784c"
@@ -70,6 +72,13 @@ module.exports = class BalanceOperationView extends BaseView
                     intent =
                         action: 'goto'
                         params: 'maif-fes'
+
+                    window.parent.postMessage(intent, window.location.origin)
+                    return false
+                else if @model.get('title') is "Prélèvement prêt personnel Cetelem"
+                    intent =
+                        action: 'goto'
+                        params: 'fake-cetelem'
 
                     window.parent.postMessage(intent, window.location.origin)
                     return false

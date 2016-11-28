@@ -4,6 +4,13 @@ output = {}
 for bank in banks
     output[bank.uuid] = [
         {
+            "label": "Prélèvement prêt personnel Cetelem",
+            "raw": "Cetelem prélèvement X2311",
+            "amount": "-296.06",
+            "rdate": "2016-11-28T00:00:00.000Z",
+            "account": "1234567890"
+        },
+        {
             "label": "Capitaine Train",
             "raw": "Capitaine Train Carte X1234",
             "amount": "-72.00",
